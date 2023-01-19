@@ -1,5 +1,15 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+// import store from '@/store'
+
+// const rejectAuthUser = (to, from, next) => {
+//   if (store.state.isLogin === true) {
+//     alert('이미 로그인을 하였습니다.')
+//     next('/')
+//   } else {
+//     next()
+//   } 로그인했을때 로그인 클릭 막기
+// }
 
 const routes = [
   {
@@ -39,6 +49,11 @@ const routes = [
     path: '/signUp',
     name: 'SignUpView',
     component: () => import(/* webpackChunkName: "databinding" */ '../views/Signup/SignUpview.vue')
+  },
+  {
+    path: '/login',
+    name: 'LoginView',
+    component: () => import(/* webpackChnkName: "databinding" */ '../views/Signup/LoginView.vue')
   }
 ]
 

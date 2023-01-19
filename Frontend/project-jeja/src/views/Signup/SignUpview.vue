@@ -14,11 +14,11 @@
             </div>
             <div>
                 <label for="password">비밀번호</label>
-                <input type="text" id="password" v-model="pw" />
+                <input type="password" id="password" v-model="pw" />
             </div>
             <div>
                 <label for="passwordConfirm">비밀번호 확인</label>
-                <input type="text" id="passwordConfirm" v-model="pwConfirm" />
+                <input type="password" id="passwordConfirm" v-model="pwConfirm" />
             </div>
             <div>
                 <select name="" id="">
@@ -26,7 +26,7 @@
                     <option value="" :key="cell.code" v-for="cell in cells">{{cell.title}}</option>
                 </select>
             </div>
-            <button type="submit">확인</button>
+            <button type="submit">회원가입</button>
         </form>
     </div>
 </template>
