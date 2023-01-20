@@ -5,7 +5,7 @@
     <router-link to="/databinding/string">string</router-link> |
     <router-link to="/databinding/Html">Html</router-link> |
     <router-link to="/signup">회원가입</router-link> |
-    <router-link to="/login">로그인</router-link> |
+    <router-link to="/accounts/login">로그인</router-link> |
   </nav>
   <router-view/>
 </template>

@@ -46,12 +46,12 @@ const routes = [
     component: () => import(/* webpackChunkName: "databinding" */ '../views/1_databinding/DataBindingSelectView.vue')
   },
   {
-    path: '/signUp',
+    path: '/signup',
     name: 'SignUpView',
     component: () => import(/* webpackChunkName: "databinding" */ '../views/Signup/SignUpview.vue')
   },
   {
-    path: '/login',
+    path: '/accounts/login',
     name: 'LoginView',
     component: () => import(/* webpackChnkName: "databinding" */ '../views/Signup/LoginView.vue')
   }

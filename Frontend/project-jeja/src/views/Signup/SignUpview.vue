@@ -21,6 +21,14 @@
                 <input type="password" id="passwordConfirm" v-model="pwConfirm" />
             </div>
             <div>
+              <label for="phon-num">휴대폰번호를 입력해주세요</label>
+              <input type="number" id="phon-num" v-model="phoneNum" />
+            </div>
+            <div>
+              <label for="birth">생일을 입력해주세요</label>
+              <input type="date" id="birth" v-model="birthDay" />
+            </div>
+            <div>
                 <select name="" id="">
                     <option value="">내가 속한 셀</option>
                     <option value="" :key="cell.code" v-for="cell in cells">{{cell.title}}</option>
@@ -28,6 +36,7 @@
             </div>
             <button type="submit">회원가입</button>
         </form>
+        <router-link :to="{ name: 'LoginView' }"><button class="btn">로그인</button></router-link>
     </div>
 </template>
 
@@ -41,6 +50,8 @@ export default {
       name: '',
       pw: '',
       pwConfirm: '',
+      phonNum: '',
+      birthDay: '',
       cells: [
         { title: '1셀', code: '1' },
         { title: '2셀', code: '2' },
@@ -50,10 +61,6 @@ export default {
       ]
     }
   },
-  setup() {},
-  created() {},
-  mounted() {},
-  unmounted() {},
   methods: {
     subitForm() {
       console.log('dd')
@@ -63,12 +70,17 @@ export default {
       const name = this.name
       const pw = this.pw
       const pwConfirm = this.pwConfirm
-
+      const phoneNum = this.phonNum
+      const birthDay = this.birthDay
+      const cells = this.cells
       const payload = {
         email,
         name,
         pw,
-        pwConfirm
+        pwConfirm,
+        phoneNum,
+        birthDay,
+        cells
       }
       this.$store.dispatch('signUp', payload)
     }
