@@ -6,7 +6,7 @@ const API_URL = 'http://127.0.0.1:8000'
 
 export default createStore({
   state: {
-    email: '',
+    Id: '',
     password: '',
     token: '',
 
@@ -35,20 +35,20 @@ export default createStore({
   },
   actions: {
     logIn(context, payload) {
-      const email = payload.email
+      const Id = payload.Id
       const password = payload.password
       axios({
         method: 'post',
         url: `${API_URL}/accounts/login/`,
         data: {
-          email, password
+          Id, password
         }
       })
         .then(res => {
           context.commit('SAVE_TOKEN', res.data.key)
           context.commit('SAVE_USER_INFO', {
             userToken: res.data.key,
-            email
+            Id
           })
           router.push({ name: 'Home' })
         })
@@ -57,7 +57,7 @@ export default createStore({
         })
     },
     signUp(context, payload) {
-      const email = payload.email
+      const Id = payload.Id
       const pw = payload.pw
       const pwConfirm = payload.pwConfirm
       const phoneNum = payload.phoneNum
@@ -68,7 +68,7 @@ export default createStore({
         method: 'post',
         url: `${API_URL}/accounts/signup/`,
         data: {
-          email, pw, pwConfirm, phoneNum, birthDay, cells
+          Id, pw, pwConfirm, phoneNum, birthDay, cells
         }
       })
         .then(res => {
@@ -83,8 +83,8 @@ export default createStore({
   },
   getters: {
     getEmail(state) {
-      console.log(state.email)
-      return state.email
+      console.log(state.Id)
+      return state.Id
     }
   }
 

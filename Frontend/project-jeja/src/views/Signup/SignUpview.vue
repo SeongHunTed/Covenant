@@ -5,8 +5,8 @@
         <p>환영합니다 ^^</p>
         <form @submit.prevent="submitForm">
             <div>
-                <label for="email">E-mail</label>
-                <input type="text" id="email" v-model="email" />
+                <label for="ID">ID</label>
+                <input type="text" id="ID" v-model="Id" />
             </div>
             <div>
                 <label for="name">이름</label>
@@ -46,7 +46,7 @@ export default {
   name: 'SignUpview',
   data() {
     return {
-      email: '',
+      Id: '',
       name: '',
       pw: '',
       pwConfirm: '',
@@ -66,7 +66,7 @@ export default {
       console.log('dd')
     },
     signUp() {
-      const email = this.email
+      const Id = this.Id
       const name = this.name
       const pw = this.pw
       const pwConfirm = this.pwConfirm
@@ -74,7 +74,7 @@ export default {
       const birthDay = this.birthDay
       const cells = this.cells
       const payload = {
-        email,
+        Id,
         name,
         pw,
         pwConfirm,

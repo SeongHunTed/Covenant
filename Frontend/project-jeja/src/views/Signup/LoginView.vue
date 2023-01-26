@@ -1,8 +1,8 @@
 <template>
     <div>
         <div>
-            <label for="id">E-mail을 입력해주세요.</label>
-            <input type="text" id="email" v-model="email" />
+            <label for="Id">ID를 입력해주세요.</label>
+            <input type="text" id="Id" v-model="Id" />
         </div>
         <div>
             <label for="password">password를 입력해주세요.</label>
@@ -18,18 +18,18 @@ export default {
   components: {},
   data() {
     return {
-      email: '',
+      Id: '',
       password: ''
     }
   },
   methods: {
     // ...mapActions(['login']),
     logIn() {
-      const email = this.email
+      const Id = this.Id
       const password = this.password
 
       const payload = {
-        email, password
+        Id, password
       }
 
       this.$store.dispatch('logIn', payload)
